@@ -150,6 +150,27 @@ footer a{text-decoration:none;color:#fff}
   body{padding-bottom:56px}}
 h2 em,.cierre h2 em{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:700;letter-spacing:0;font-size:1.08em}
 .serv img{object-fit:cover}
+/* ===== Capa «llamativa» (17-10-2026): mismo contenido, más presencia ===== */
+.portada{min-height:min(88vh,860px);display:flex;align-items:flex-end}
+.portada::after{background:radial-gradient(70% 60% at 85% 15%,rgba(214,51,138,.35),transparent 60%),linear-gradient(180deg,rgba(var(--osc-rgb),.15) 0%,rgba(var(--osc-rgb),.55) 48%,rgba(var(--osc-rgb),.95) 100%)}
+.portada .wrap{padding:120px 0 70px}
+.portada h1{text-transform:none;font-size:clamp(2.7rem,8.4vw,5.4rem);line-height:1.02;max-width:12ch;letter-spacing:-.01em}
+.portada h1 em{display:block;font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:700;color:#ff7cc0}
+.estrella{position:absolute;right:max(18px,calc((100% - 1160px)/2));top:96px;z-index:2;display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:20px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;animation:flota 5s ease-in-out infinite}
+.estrella b{font:800 2rem/1 var(--display)}.estrella span{font-size:.82rem;line-height:1.3}.estrella i{color:#ffd166;font-style:normal;letter-spacing:2px}
+@keyframes flota{50%{transform:translateY(-8px)}}
+.cinta{background:var(--pri);color:#fff;overflow:hidden;white-space:nowrap;border-block:1px solid rgba(255,255,255,.2)}
+.cinta div{display:inline-flex;gap:36px;padding:16px 0;animation:corre 28s linear infinite;font:700 1.05rem/1 var(--display);letter-spacing:.04em;text-transform:uppercase}
+.cinta span::after{content:"✦";margin-left:36px;opacity:.75}
+@keyframes corre{to{transform:translateX(-50%)}}
+.serv{transition:transform .25s,box-shadow .25s}.serv:hover{transform:translateY(-6px);box-shadow:0 26px 48px -28px rgba(120,20,80,.55)}
+.serv img{transition:transform .5s}.serv:hover img{transform:scale(1.05)}
+.trabajos{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:340px;gap:14px}
+.trabajos img{width:100%;height:100%;object-fit:cover;border-radius:22px;transition:transform .4s,filter .4s}
+.trabajos img:nth-child(even){margin-top:34px;height:calc(100% - 34px)}.trabajos img:hover{transform:scale(1.02);filter:saturate(1.15)}
+@media (max-width:760px){.portada{min-height:82vh}.estrella{display:none}.portada .wrap{padding:110px 0 110px}
+ .trabajos{grid-template-columns:1fr 1fr;grid-auto-rows:230px}}
+@media (prefers-reduced-motion:reduce){.cinta div,.estrella{animation:none}}
 </style>
 </head>
 <body>
@@ -191,6 +212,7 @@ h2 em,.cierre h2 em{font-family:"Playfair Display",Georgia,serif;font-style:ital
 <main id="inicio">
 <div class="portada">
   <img src="assets/hero.jpg" alt="Balayage con ondas hecho en Carla Ashly" fetchpriority="high">
+  <div class="estrella" aria-label="Nota 4,9 en Google con 334 reseñas"><b>4,9</b><span><i>★★★★★</i><br>334 reseñas en Google</span></div>
   <div class="wrap">
     <span class="ojo">Salón de belleza · desde 2014</span>
     <h1>Ven a vivir <em>la experiencia</em></h1>
@@ -203,6 +225,7 @@ h2 em,.cierre h2 em{font-family:"Playfair Display",Georgia,serif;font-style:ital
   </div>
 </div>
 
+<div class="cinta" aria-hidden="true"><div><span>Color</span><span>Balayage</span><span>Iluminaciones</span><span>Cortes</span><span>Peinados con ondas</span><span>Uñas</span><span>Limpieza facial</span><span>Color</span><span>Balayage</span><span>Iluminaciones</span><span>Cortes</span><span>Peinados con ondas</span><span>Uñas</span><span>Limpieza facial</span></div></div>
 <section id="servicios" class="gris"><div class="wrap">
   <div class="cab aparece"><div><span class="ojo">Servicios</span><h2>Nuestros <em>servicios</em></h2></div><p>Elige lo que necesitas y te dejamos el mensaje listo para WhatsApp.</p></div>
   <div class="servicios"><article class="serv aparece"><img src="assets/s1.jpg" alt="Color y balayage" loading="lazy"><div class="cuerpo"><h3>Color y balayage</h3><p>Rubios, balayage e iluminaciones con una especialista en color.</p><a class="btn btn-osc" data-s="Color y balayage" href="#">Pedir hora</a></div></article><article class="serv aparece"><img src="assets/t1.jpg" alt="Corte y peinado con ondas" loading="lazy"><div class="cuerpo"><h3>Corte y peinado</h3><p>Cortes para mujer, hombre y niños, y peinados con ondas.</p><a class="btn btn-osc" data-s="Corte y peinado" href="#">Pedir hora</a></div></article><article class="serv aparece"><img src="assets/s2.jpg" alt="Uñas" loading="lazy"><div class="cuerpo"><h3>Uñas</h3><p>Manicure y diseños con detalle: degradados, brillos y decorados.</p><a class="btn btn-osc" data-s="Uñas" href="#">Pedir hora</a></div></article><article class="serv aparece"><img src="assets/s3.jpg" alt="Limpieza facial profunda con fototerapia LED" loading="lazy" style="object-fit:contain;background:#fbe3ee"><div class="cuerpo"><h3>Limpieza facial</h3><p>Limpieza facial profunda para una piel fresca y renovada.</p><p class="precio">Promoción $39.990</p><a class="btn btn-osc" data-s="Limpieza facial" href="#">Pedir hora</a></div></article></div>
