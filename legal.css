@@ -1,0 +1,22 @@
+*,*::before,*::after{box-sizing:border-box}
+:root{--pri:#d6338a;--pri2:#b0226f;--osc:#2e1626;--bg:#fdf4f9;--text:#2a1823;--muted:#73586a;--line:#f0d9e6}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.05rem/1.7 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-wrap:anywhere}
+a{color:var(--pri2);text-underline-offset:3px}a:hover{color:var(--osc)}
+a:focus-visible{outline:3px solid var(--pri);outline-offset:3px}
+.wrap{width:min(780px,100% - 40px);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:var(--osc);padding:10px 14px;z-index:99}.skip:focus{left:8px;top:8px}
+header{background:var(--osc);border-bottom:4px solid var(--pri)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:68px}
+.marca{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font:700 1.1rem/1 "Montserrat","Arial Black",sans-serif;text-transform:uppercase;letter-spacing:.5px}
+.marca img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.back{color:#f1d4e3;font-weight:600;text-decoration:none;padding:12px 0;font-size:.97rem}.back:hover{color:#fff}
+main{padding:46px 0 70px}
+h1{font:800 clamp(2rem,7vw,3rem)/1.05 "Montserrat","Arial Black",sans-serif;margin:0 0 12px;color:var(--osc)}
+h1 em{font:italic 700 1em "Playfair Display",Georgia,serif;color:var(--pri)}
+h2{font:700 1.3rem/1.3 "Montserrat",sans-serif;color:var(--osc);margin:38px 0 10px}
+.upd{color:var(--muted);font-size:.95rem;margin:0 0 22px}
+.nota{background:#fff;border:1px solid var(--line);border-left:5px solid var(--pri);border-radius:12px;padding:16px 18px;margin:22px 0}
+ul{padding-left:1.2em}li{margin:4px 0}
+footer{background:var(--osc);color:#e9d3df;padding:26px 0;font-size:.93rem}footer a{color:#fff}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
