@@ -287,11 +287,11 @@ h2 em,.cierre h2 em{font-family:"Playfair Display",Georgia,serif;font-style:ital
   </div>
   <form id="fCot" class="aparece" novalidate>
     <h3>Pide tu hora</h3>
-    <label>Tu nombre<input id="cNombre" autocomplete="name"></label>
+    <label>Tu nombre<input id="cNombre" autocomplete="name" maxlength="60"></label>
     <label>¿Qué necesitas?
-      <select id="cServ"><option value="">— Elige uno —</option><option>Color y balayage</option><option>Corte de dama</option><option>Corte de varón</option><option>Peinados</option><option>Uñas</option><option>Limpieza facial</option><option>Otra consulta</option></select></label>
-    <label>Día y hora que prefieres<input id="cDir" placeholder="Ej: sábado en la mañana"></label>
-    <label>Cuéntanos más (opcional)<textarea id="cMsg"></textarea></label>
+      <select id="cServ" required aria-required="true" aria-describedby="cAviso"><option value="">— Elige uno —</option><option>Color y balayage</option><option>Corte de dama</option><option>Corte de varón</option><option>Peinados</option><option>Uñas</option><option>Limpieza facial</option><option>Otra consulta</option></select></label>
+    <label>Día y hora que prefieres<input id="cDir" maxlength="80" placeholder="Ej: sábado en la mañana"></label>
+    <label>Cuéntanos más (opcional)<textarea id="cMsg" maxlength="500"></textarea></label>
     <p class="aviso" id="cAviso" role="status"></p>
     <button class="btn btn-wa" type="submit"><svg aria-hidden="true"><use href="#wa"/></svg>Enviar por WhatsApp</button>
     <small>Se abre WhatsApp con el mensaje listo. Esta página no guarda tus datos. Ver la <a href="privacidad.html">Política de privacidad</a>.</small>
@@ -327,7 +327,7 @@ h2 em,.cierre h2 em{font-family:"Playfair Display",Georgia,serif;font-style:ital
   var f=document.getElementById("fCot");
   if(f){f.addEventListener("submit",function(ev){ev.preventDefault();
     var n=document.getElementById("cNombre").value.trim(),s=document.getElementById("cServ").value,d=document.getElementById("cDir").value.trim(),m=document.getElementById("cMsg").value.trim(),av=document.getElementById("cAviso");
-    if(!s){av.textContent="Elige el servicio que necesitas.";return}
+    if(!s){av.textContent="Elige el servicio que necesitas.";document.getElementById("cServ").focus();return}
     av.textContent="";
     var t="Hola"+(n?", soy "+n:"")+". Vi su página web y necesito: "+s+"."+(d?" Día y hora que prefieres: "+d+".":"")+(m?" "+m:"");
     abrir(t)})}
