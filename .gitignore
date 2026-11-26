@@ -1,3 +1,5 @@
 material/
 mensaje-whatsapp.txt
 cotizacion/
+# presupuestos con datos del cliente: nunca al repositorio público
+presupuesto/
